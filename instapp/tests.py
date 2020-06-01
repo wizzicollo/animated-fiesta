@@ -37,3 +37,39 @@ class ImageTestClass(TestCase):
         Image.objects.all().delete()   
 
 
+class ProfileTestClass(TestCase):
+    
+    '''
+    This is a class that perform unnittest  behaviour on the Profile Model.
+    '''
+    
+    def setUp(self):
+        self.profile_one = Profile(profile_photo='images/mine.jpg',bio='Currently doing datascience in moringa',user_id=3)
+        
+        
+    def test_instance(self):
+        self.assertTrue(isinstance(self.profile_one,Profile)) 
+
+    def test_save_method(self):
+        
+        self.profile_one.save_profile()
+        profiles = Profile.objects.all()
+        self.assertTrue(len(profiles) > 0)
+
+    def test_delete_method(self):
+        self.profile_one.save_profile()
+        self.profile_one.delete_profile()
+        profiles = Profile.objects.all()
+        self.assertTrue(len(profiles) is 0)
+        
+    def test_update_method(self):
+        self.profile_one.save_profile()
+        new_bio = '# thursday speaker'
+        done = self.profile_one.update_bio(self.profile_one.pk,new_bio)
+        self.assertEqual(done,new_bio)
+        
+    def tearDown(self):
+        Profile.objects.all().delete()
+    
+
+
