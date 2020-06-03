@@ -1,10 +1,17 @@
 {% extends "registration/base.html"%}
 {% load bootstrap4 %}
+{% load static %}
 {% block content %}
 <div class="container">
     <div class="row">
         <!-- Empty div -->
-        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="col-md-6">
+                <div>
+                    <img class="thumbnail" src="{% static 'photos/insta.jpg' %}" style="height:400px;width:350px;">
+                </div>
+              </div>
+        </div>
         <div class="col-md-4">
             {% if form.errors %}
             <p> Some Information Might be Incorrect </p>
@@ -34,8 +41,61 @@
 
         </div>
         <!-- empty div -->
-        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div id="card" class="card mt-5" style="width: 28rem;">
+                <div class="card-body text-center">
+                  <h4 class="card-title"><strong>Capturing and sharing your moments.</strong> </h4>
+                  <h5 class="card-title">Get the app to share your first photo or video.</h5>
+                <div  id="app" >        
+                  <a href="https://itunes.apple.com/ke/app//id389801252?mt=8"><img src="{% static 'photos/appstore.png' %}"
+                      style="height:70px;width:200px;"></a>
+                  <a href="https://play.google.com/store?hl=en"><img src="{% static 'photos/playstore.png' %}" style="height:70px;width:200px;"></a>
+                </div>
+              </div> 
+              </div>  
+        </div>
     </div>
+<!-- Footer -->
+
+
+
+</footer>
+<!-- Footer -->
+
+<footer class="footer myfoot" role="contentinfo">
+    <div class="footer-container">
+
+      <nav class="footer-nav" role="navigation">
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+      
+    </div> <!-- Footer container end -->
+  </footer>
+
+   
+    <div class="col-md-6">
+        <div class="footer text-center">
+          <div class="page-footer font-small  color: #00376b;   ">
+          <ul id="footer1" style="font-size:10px; float: center; text-align: center; color: #00376b;"></ul>
+            <ul><strong><a href="#!">ABOUT</a></strong>    <strong><a href="#!">HELP</a></strong>     <strong><a href="#!">PRESS</a></strong>    <strong><a href="#!">API</a></strong> <strong><a href="#!">JOBS</a></strong>    <strong><a href="#!">PRIVACY</a></strong>     <strong><a href="#!">TERMS</a></strong>    <strong><a href="#!">LOCATIONS</a></strong>  <strong><a href="#!">TOP ACCOUNTS</a></strong>     </ul>
+            <span class="language"> <strong><a href="#!">LANGUAGE</a></strong> 
+              <select name="language" class="select" onchange="la(this.value)">
+                <option value="#">English</option>
+                <option value="http://ru-instafollow.bitballoon.com">Russian</option>
+              </select>
+            </span>
+<br>
+<br>
+
+            <ul style="font-size:10px;"> <strong>© 2020 INSTAGRAM FROM FACEBOOK</strong></ul>
+         
+           
+          </ul>
+  
+        </div>
+  
+      </div>
+
 </div>
 
 {% endblock %}

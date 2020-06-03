@@ -9,7 +9,7 @@ class ImageTestClass(TestCase):
     
     def setUp(self):
         
-        self.image_one = Image(image='images/lagoon.jpeg',image_name='dan', image_caption='lacasa de papel',likes=40, id=1,user_id=3)
+        self.image_one = Image(image='images/trump.jpeg',image_name='trump', image_caption='blacks lives matter',likes=200, id=1,user_id=3)
         
     def test_instance(self):
         Image.objects.all().delete()
@@ -29,7 +29,7 @@ class ImageTestClass(TestCase):
         
     def test_update_method(self):
         self.image_one.save()
-        new_caption = 'That image is cool'
+        new_caption = 'Trump a disgrace to humanity'
         done = self.image_one.update_caption(self.image_one.id,new_caption)
         self.assertEqual(done,new_caption)
         
@@ -44,7 +44,7 @@ class ProfileTestClass(TestCase):
     '''
     
     def setUp(self):
-        self.profile_one = Profile(profile_photo='images/mine.jpg',bio='Currently doing datascience in moringa',user_id=3)
+        self.profile_one = Profile(profile_photo='images/coder.jpg',bio='Currently junior dev is the stage am in my career',user_id=3)
         
         
     def test_instance(self):
@@ -64,7 +64,7 @@ class ProfileTestClass(TestCase):
         
     def test_update_method(self):
         self.profile_one.save_profile()
-        new_bio = '# thursday speaker'
+        new_bio = '# blacks lives matter'
         done = self.profile_one.update_bio(self.profile_one.pk,new_bio)
         self.assertEqual(done,new_bio)
         

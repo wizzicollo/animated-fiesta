@@ -22,31 +22,64 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/"><i class="fab fa-4x fa-instagram"></i></a>
+        <a class="navbar-brand" href="/"><i class="fab fa-4x fa-instagram"><img src="{% static '/photos/inst.png' %}"></i></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
+        
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 {% if user.is_authenticated %}
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item  active"></li>
+                <a class="list-group-item" href="/"><img src="{% static '/photos/ico.png' %}"></a>
+            </li> 
+                   
                 <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" img src="{% static '/photos/homeico.png' %}"href="/"><strong></strong> <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{%url 'profile'%}">{{user.username}}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="/logout" tabindex="-1" aria-disabled="true">logout </a>
-                </li>
-                <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_user'%}">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search_user">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+               
             </ul>
-            <span><img src="{{user.profile.profile_photo.url}}" alt="" style="border-radius: 50%; width:50px; height:50px; border-color: brown; border-width: 1px;"></span>
+            <ul class="navbar-nav mr-auto">
+                <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_user'%}">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search_user">
+                    <button class="btn btn-outline-info btn-sm">Search</button>
+                </form>
+            </ul>
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/"><i class="far fa-heart fa-2x"></i></p></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{%url 'upload'%}"><i class="far fa-compass fa-2x" data-toggle="tooltip" data-placement="top" title="Upload Image"></i> </a>
+                </li>
+                <li class="nav-item  active">
+                    <a class="nav-link " href="{%url 'edit'%}"><i class="far fa-user fa-2x"></i></a> </a>
+                </li>
+                <li class="nav-item  active">
+                    <a class="nav-link " href="{%url 'edit'%}"><i class="far fa-paper-plane fa-2x"></i></a> </a>
+                </li> 
+                <span><img src="{{user.profile.profile_photo.url}}" alt="" style="border-radius: 50%; width:50px; height:50px; border-color: brown; border-width: 1px;"></span>
+            </ul>
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link " href="/logout" tabindex="-1" aria-disabled="true"><strong><i class="fas fa-sign-out-alt" style="font-size:30px"></i></strong> </a>
+            </li>
+        </ul>
             <!--  -->
+
+            <div class="main">
+                <div class="container">
+                  <div class="nav">
+                
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             {% endif %}
             
             
@@ -73,3 +106,4 @@
 </body>
 
 </html>
+

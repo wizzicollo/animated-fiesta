@@ -1,5 +1,4 @@
 {% extends 'instapp/base.html' %}
-
 {% block content %}
 <div class="container">
     <!--user profile info -->
@@ -20,6 +19,20 @@
                 <a href="{%url 'edit'%}" class="btn btn-outline-info btn-sm">Edit Profile</a>
         </div>
     </div>
+    <div class="data">
+        <div class="profile-info d-flex align-items-center">
+          <h2>{{user.username}}</h2>
+          
+        </div>
+        <p>{{user.email}}</p>
+        <div class="profile-data d-flex">
+          <p>{{posts | length }} posts</p>
+          <p class="px-3">0 follower</p>
+          <p>0 following</p>
+        </div>
+      </div>
+    </div>
+  </div>
     <h3 class="text-center">My Photos</h3>
     <hr>
     <div class="row mt-2">

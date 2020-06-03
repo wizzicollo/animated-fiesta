@@ -1,5 +1,4 @@
 {% extends 'instapp/base.html' %}
-
 {% block content %}
 <div class="container">
 
@@ -11,8 +10,14 @@
         <div class=" col-md-3 ">
 
         </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class=" col-md-6 mx-auto">
-            <div class="card mb-2" style="width: 25rem;">
+            <div class="card mb-2" style="width: 25rem; color: black;">
                 <div class="card-header">
                     <span><img src="{{image.user.profile.profile_photo.url}}" alt="" data-target="#{{image.image_name}}{{image.id}}"
                         data-toggle="modal"
@@ -24,18 +29,22 @@
                 </div>
                 <img src="{{image.image.url}}" alt="" class="img-thumbnail img-responsive img-fluid">
 
-                <div class="card-footer">
-                    <a href="{% url 'likes' image.id%}" class="btn btn-sm btn-outline-info">{{image.likes}} Likes</a>
-
-                    <a href="{% url 'newComment' image.id%}" class="btn btn-outline-info btn-sm">Add comments</a>
-                    <a href="{% url 'comments' image.id %}" class="btn btn-outline-info btn-sm">view comments</a>
-                </div>
+            
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'likes' image.id%}"><i class="far fa-heart fa-2x">{{image.likes}}</i></p></a>
+                    </li>
+                    
+                    <li class="nav-item  active">
+                        <a class="nav-link " href="{%url 'newComment' image.id%}"><i class="far fa-comment fa-2x"></i></a> </a>
+                    </li>
+                    <li class="nav-item  active">
+                        <a class="nav-link " href="{%url 'comments' image.id%}"><i class="far fa-paper-plane fa-2x"></i></a> </a>
+                    </li> 
+                   
+                </ul>
             </div>
-
-
-
         </div>
-        <div class=" col-md-3 "></div>
     </div>
 
     <div class="modal fade" id="{{image.image_name}}{{image.id}}" tabindex="-1" role="dialog"
