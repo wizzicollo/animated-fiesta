@@ -76,8 +76,8 @@ python manage.py runserver
 # Running the tests
 Use the command given below to run automated tests.
 
-    python manage.py test instagram
-    python manage.py test user
+    python manage.py test instapp
+    
 
 # TECHNOLOGIES Used
 

@@ -1,0 +1,15 @@
+#Environments
+virtual/
+.my-project-env
+
+#Applications
+*.pyc
+._pycache_
+
+#Visual Studio
+.vscode
+
+.bashrc
+
+
+.env
