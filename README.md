@@ -16,7 +16,7 @@ This is a clone of Instagram. You can post, comment and view pictures posted on 
 
 2. Users can view different photos.
 
-3. Users can click on a single photo to view it and also view details of the photo.
+3. Users can click on a single photo to view it.
 
 4. Users can search for different photos.
 
@@ -27,11 +27,6 @@ This is a clone of Instagram. You can post, comment and view pictures posted on 
 7. Users can view a picture and leave a comment on it.
 
 # Installion and Setup instructions
-
-*** To view the app.Visit -> AvechiGram
-
-Clone this repo: git clone ### Installing
-*** To view the app.Visit -> AvechiGram
 
 1. Clone this repo: git clone https://github.com/wizzicollo/animated-fiesta.git.
 
@@ -44,7 +39,7 @@ Clone this repo: git clone ### Installing
 pip install -r requirements.txt
 5. On your terminal,Create database gallery using the command below.
 
-CREATE DATABASE instaclone; 
+CREATE DATABASE instagram; 
 **if you opt to use your own database name, replace instagram your preferred name, then also update settings.py variable DATABASES > NAME
 6. Migrate the database using the command below
 
@@ -63,15 +58,13 @@ python manage.py runserver
 pip install -r requirements.txt
 12. On your terminal,Create database gallery using the command below.
 
-CREATE DATABASE instaclone; 
-**if you opt to use your own database name, replace instaclone your preferred name, then also update settings.py variable DATABASES > NAME
+CREATE DATABASE instagram; 
+
 13. Migrate the database using the command below
 
 python3.6 manage.py migrate
 14. Then serve the app, so that the app will be available on localhost:8000, to do this run the command below
 
-python manage.py runserver
-15. Use the navigation bar/navbar/navigation pane/menu to navigate and explore the app.
 
 # Running the tests
 Use the command given below to run automated tests.
@@ -92,7 +85,7 @@ kiprutohcollo@gmail.com
 
 # live link
 
-
+https://instagramfiesta.herokuapp.com/
 
 # License
 This project is licensed under the MIT License - see the LICENSE.md file for details
