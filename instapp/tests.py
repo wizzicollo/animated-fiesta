@@ -1,5 +1,6 @@
 from django.test import TestCase
 from . models import *
+from .models import Image,Profile
 
 # Create your tests here.
 class ImageTestClass(TestCase):
